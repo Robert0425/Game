@@ -22,7 +22,6 @@ export default {
   filters: {
     time(val) {
       const countDown = Math.floor(val);
-      console.log(countDown);
       const hh = Math.floor(countDown / 3600);
       const mm = Math.floor((countDown % 3600) / 60);
       const ss = countDown % 60;

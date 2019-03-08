@@ -21,6 +21,7 @@
 
 <script>
 import Qs from 'qs';
+import OrderService from './OrderService';
 
 const config = {
   headers: {
@@ -53,6 +54,9 @@ export default {
       ],
     };
   },
+  created(){
+  this.as = new OrderService(this.axios)
+  },
   mounted() {
     this.init();
   },
@@ -75,21 +79,11 @@ export default {
           this.number = response.data.game.info.BBHL.current.num;
         });
     },
-    sendOrder() {
+  sendOrder() {
       const order = this.generateOrder();
-      this.axios
-        .post(
-          'http://lt.vir999.net/pt/mem/ajax/shoppingcart/order.json',
-          Qs.stringify(order),
-          config,
-        )
-        .then((response) => {
-          alert('投注成功');
-        })
-        .catch((error) => {
-          alert('投注失敗');
-        });
+        this.as.sendOder(order)
     },
+
     generateOrder() {
       const tempOrder = [];
       this.checkbox.forEach((item) => {

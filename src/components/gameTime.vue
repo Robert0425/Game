@@ -86,7 +86,6 @@ export default {
       setTimeout(this.start, 10000);
       this.$emit('close');
     },
-
   },
   mounted() {
     this.start();

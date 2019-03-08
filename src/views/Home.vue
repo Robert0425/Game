@@ -29,7 +29,6 @@ import gameTime from '@/components/gameTime.vue';
 import historyResult from '@/components/historyResult.vue';
 import gameResult from '@/components/gameResult.vue';
 import orderCompent from '@/components/orderCompent.vue';
-
 export default {
   components: {
     gameTime,
